@@ -22,16 +22,24 @@ messages = ['Gym?',
             'where r u???',
             'pinball']
 
-tag_set = nltk.help.upenn_tagset()
-#tag_set2 = nltk.tagset_mapping()
-print(tag_set)
+#tag_set = nltk.help.upenn_tagset()
+#tagset_universal = nltk.map_tag()
+#tagset_universal = nltk.
+tagset_upenn = nltk.help.upenn_tagset()
+#tagset_unvsl = nltk.tagset_mapping(="universal")
+print(tagset_upenn)
+#print(tagset_unvsl)
 
+pos_list = []
 for msg in messages:
     tokens = nltk.word_tokenize(msg)
     pos = nltk.pos_tag(tokens, tagset='universal')
+    #pos = tag_set.pos_tag(tokens, )
     #pos_simple = nltk.classify.
-    print(pos)
+    pos_list.append(pos)
+    #print(pos)
 
+print(pos_list)
 
 # wordtags = nltk.ConditionalFreqDist((w.lower(), t)
 #         for w, t in nltk.corpus.brown.tagged_words(tagset="universal"))
