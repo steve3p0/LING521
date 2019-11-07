@@ -4,17 +4,21 @@ Portland State University LING 521: Applied English grammar code repo for winter
 #### Running the Scripts:
 Click on the Jupyter Notebooks below to load a demo of the script.  
 
-* [Assignment 1: Text Messages (2007) Analysis Script](https://github.com/steve3p0/LING521/blob/master/textmsg_analysis/text_analysis.ipynb)
+* [Assignment 1: Text Messages (2007) Analysis Script](https://github.com/steve3p0/LING521/blob/master/textmsg_analysis/text_analysis.ipynb)<br>
+<sub><sup>- Run above Jupyter Notebook in [mybinder](https://hub-binder.mybinder.ovh/user/steve3p0-ling521-fr3ttoni/notebooks/textmsg_analysis/text_analysis.ipynb) if it doesn't load. </sup></sub><br>
 * Assignment 2:
 * Assignment 3:
 
-<sub><sup>Note: There are some issues with loading Jupyter Notebooks.  Possible solutions and/or workarounds are being investigated.</sup></sub><br>
-<sub><sup>- [Working with Jupyter Notebook files on GitHub](https://help.github.com/en/github/managing-files-in-a-repository/working-with-jupyter-notebook-files-on-github)</sup></sub><br>
-
+<B>NOTE:</B> There are some issues with loading Jupyter Notebooks.  Possible solutions and/or workarounds are being investigated.</sup></sub><br>
+- If your Jupyter Notebook is having issues, you can copy and paste the URL from Github to:
+    - [NB Viewer](http://nbviewer.jupyter.org/)
+    - [My Binder](https://mybinder.org/) <sub><sup>Update 11/7/2019: * This seems to work best</sup></sub>
+- [Working with Jupyter Notebook files on GitHub](https://help.github.com/en/github/managing-files-in-a-repository/working-with-jupyter-notebook-files-on-github)
 
 #### Software Dependencies:<br>
-To run the python scripts in this repository, the following dependencies must be met.
-* NOTE: These instructions are for Windows 10 (Instructor's OS)
+To run the python scripts in this repository, <I>on your local machine</I>, the following dependencies must be met:
+
+NOTE: These instructions are for Windows 10 (Instructor's OS)
 
 - Install python 3.7 (https://www.python.org/ftp/python/3.7.5/python-3.7.5-amd64-webinstall.exe()
 - update Environment variables:
