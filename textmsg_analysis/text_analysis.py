@@ -17,7 +17,6 @@ nltk.download('tagsets')
 nltk.download('stopwords')
 
 # tagset_upenn = nltk.help.upenn_tagset()
-
 from nltk.corpus import stopwords
 
 aux_verbs = ['be', 'am', 'are', 'is', 'was', 'were', 'being', 'been',
