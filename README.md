@@ -4,6 +4,8 @@ Portland State University LING 521: Applied English grammar code repo for winter
 #### Running the Scripts:
 Click on the Jupyter Notebooks below to load a demo of the script.  
 
+* [Dependency Test](https://github.com/steve3p0/LING521/blob/master/textmsg_analysis/test_dependencies.ipynb)<br>
+<sub><sup>- Run above Jupyter Notebook in [mybinder](https://github.com/steve3p0/LING521/blob/master/textmsg_analysis/test_dependencies.ipynb) if it doesn't load. </sup></sub><br>
 * [Assignment 1: Text Messages (2007) Analysis Script](https://github.com/steve3p0/LING521/blob/master/textmsg_analysis/text_analysis.ipynb)<br>
 <sub><sup>- Run above Jupyter Notebook in [mybinder](https://hub-binder.mybinder.ovh/user/steve3p0-ling521-fr3ttoni/notebooks/textmsg_analysis/text_analysis.ipynb) if it doesn't load. </sup></sub><br>
 * Assignment 2:
