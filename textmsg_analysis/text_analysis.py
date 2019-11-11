@@ -65,28 +65,71 @@ for msg in messages:
 counter_pos = sum(counter_list, Counter())
 print(f"\nCounts: {counter_pos}")
 
+# Graphing
 
-N = 5
-menMeans = (20, 35, 30, 35, 27)
-womenMeans = (25, 32, 34, 20, 25)
-menStd = (2, 3, 4, 1, 2)
-womenStd = (3, 5, 2, 3, 3)
+counter_static = Counter({'NOUN': 29, 'VERB': 12, 'ADP': 9, 'ADV': 8, 'PRON': 8, '.': 7, 'DET': 4, 'ADJ': 3, 'CONJ': 2})
+nouns = (29)
+verbs = (12)
+adverbs = (8)
+adjectives = (3)
+N = 1
 ind = np.arange(N)    # the x locations for the groups
-width = 0.35       # the width of the bars: can also be len(x) sequence
+width = 0.35
 
-p1 = plt.bar(ind, menMeans, width, yerr=menStd)
-p2 = plt.bar(ind, womenMeans, width,
-             bottom=menMeans, yerr=womenStd)
+p1 = plt.bar(ind, nouns, width, yerr=1)
+p2 = plt.bar(ind, verbs, width, bottom=nouns, yerr=1)
+p3 = plt.bar(ind, adverbs, width, bottom=nouns + verbs, yerr=1)
+p4 = plt.bar(ind, adjectives, width, bottom=nouns + verbs + adverbs, yerr=1)
 
-plt.ylabel('Scores')
-plt.title('Scores by group and gender')
-plt.xticks(ind, ('G1', 'G2', 'G3', 'G4', 'G5'))
+plt.ylabel('Frequency')
+plt.title('Distribution of Lexical Word Classes')
+plt.xticks(ind, ('Text Messages'))
 plt.yticks(np.arange(0, 81, 10))
-plt.legend((p1[0], p2[0]), ('Men', 'Women'))
+plt.legend((p1[0], p2[0], p3[0], p4[0]), ('Nouns', 'Verbs', 'Adverbs', 'Adjectives'))
 
 plt.show()
 
 
+# N = 5
+# menMeans = (20, 35, 30, 35, 27)
+#
+# womenMeans = (25, 32, 34, 20, 25)
+# menStd = (2, 3, 4, 1, 2)
+# womenStd = (3, 5, 2, 3, 3)
+# ind = np.arange(N)    # the x locations for the groups
+# width = 0.35       # the width of the bars: can also be len(x) sequence
+#
+# p1 = plt.bar(ind, menMeans, width, yerr=menStd)
+# p2 = plt.bar(ind, womenMeans, width, bottom=menMeans, yerr=womenStd)
+#
+# plt.ylabel('Scores')
+# plt.title('Scores by group and gender')
+# plt.xticks(ind, ('G1', 'G2', 'G3', 'G4', 'G5'))
+# plt.yticks(np.arange(0, 81, 10))
+# plt.legend((p1[0], p2[0]), ('Men', 'Women'))
+#
+# plt.show()
+
+
+# N = 5
+# menMeans = (20, 35, 30, 35, 27)
+# womenMeans = (25, 32, 34, 20, 25)
+# menStd = (2, 3, 4, 1, 2)
+# womenStd = (3, 5, 2, 3, 3)
+# ind = np.arange(N)    # the x locations for the groups
+# width = 0.35       # the width of the bars: can also be len(x) sequence
+#
+# p1 = plt.bar(ind, menMeans, width, yerr=menStd)
+# p2 = plt.bar(ind, womenMeans, width,
+#              bottom=menMeans, yerr=womenStd)
+#
+# plt.ylabel('Scores')
+# plt.title('Scores by group and gender')
+# plt.xticks(ind, ('G1', 'G2', 'G3', 'G4', 'G5'))
+# plt.yticks(np.arange(0, 81, 10))
+# plt.legend((p1[0], p2[0]), ('Men', 'Women'))
+#
+# plt.show()
 
 
 
