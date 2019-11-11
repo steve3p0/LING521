@@ -66,12 +66,12 @@ counter_pos = sum(counter_list, Counter())
 print(f"\nCounts: {counter_pos}")
 
 # Graphing
-
 counter_static = Counter({'NOUN': 29, 'VERB': 12, 'ADP': 9, 'ADV': 8, 'PRON': 8, '.': 7, 'DET': 4, 'ADJ': 3, 'CONJ': 2})
-nouns = (29)
-verbs = (12)
-adverbs = (8)
-adjectives = (3)
+nouns = counter_static['NOUN']
+verbs = counter_static['VERB']
+adverbs = counter_static['ADV']
+adjectives = counter_static['ADJ']
+
 N = 1
 ind = np.arange(N)    # the x locations for the groups
 width = 0.35
