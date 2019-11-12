@@ -44,9 +44,6 @@ messages = ['Gym?',
             'where r u???',
             'pinball']
 
-#print(f"Word Count: {map(len, map(nltk.word_tokenize, messages))}")
-#print(map(len, map(nltk.word_tokenize, messages)))
-
 sentence_lengths = [len(sentence.split()) for sentence in messages]
 total_words = sum(sentence_lengths)
 print(f"Sentence Lengths: {sentence_lengths}")
@@ -81,20 +78,13 @@ for msg in messages:
 
 counter_pos = sum(counter_list, Counter())
 print(f"\nSummary - POS Tagging")
+print(f"counter_pos: {counter_pos}")
 print(f"Nouns: {words['NOUN']}")
 print(f"Verbs: {words['VERB']}")
 print(f"Adjectives: {words['ADJ']}")
 print(f"Adverbs: {words['ADV']}")
 print(f"Function Words: {words['FW']}")
 print(f"Inserts: {words['Inserts']}")
-
-print(f"\nCounts: {counter_pos}")
-print(f"Nouns: {counter_pos['NOUN']}")
-print(f"Verbs: {counter_pos['VERB']}")
-print(f"Adjectives: {counter_pos['ADJ']}")
-print(f"Adverbs: {counter_pos['ADV']}")
-print(f"Function Words: {counter_pos['FW']}")
-print(f"Inserts: {counter_pos['Inserts']}")
 
 # Counts
 #counter_static = Counter({'NOUN': 29, 'VERB': 12, 'ADP': 9, 'ADV': 8, 'PRON': 8, '.': 7, 'DET': 4, 'ADJ': 3, 'CONJ': 2})
@@ -105,19 +95,43 @@ raw_counts_adjectives = counter_pos['ADJ']
 raw_counts_functors = counter_pos['FW']
 raw_counts_inserts = counter_pos['Inserts']
 
-percent_nouns = counter_pos['NOUN'] / total_words
-percent_verbs = counter_pos['VERB'] / total_words
-percent_adverbs = counter_pos['ADV'] / total_words
-percent_adjectives = counter_pos['ADJ'] / total_words
-percent_functors = counter_pos['FW'] / total_words
-percent_inserts = counter_pos['Inserts'] / total_words
+percent_nouns = raw_counts_nouns / total_words
+percent_verbs = raw_counts_verbs / total_words
+percent_adjectives = raw_counts_adjectives / total_words
+percent_adverbs = raw_counts_adverbs / total_words
+percent_functors = raw_counts_functors / total_words
+percent_inserts = raw_counts_inserts / total_words
 
 norm_counts_nouns = percent_nouns * 1000
 norm_counts_verbs = percent_verbs * 1000
-norm_counts_adverbs = percent_verbs * 1000
 norm_counts_adjectives = percent_adjectives * 1000
+norm_counts_adverbs = percent_verbs * 1000
 norm_counts_functors = percent_functors * 1000
 norm_counts_inserts = percent_inserts * 1000
+
+print(f"\nRaw Counts:")
+print(f"Nouns: {raw_counts_nouns}")
+print(f"Verbs: {raw_counts_verbs}")
+print(f"Adjectives: {raw_counts_adjectives}")
+print(f"Adverbs: {raw_counts_adverbs}")
+print(f"Function Words: {raw_counts_functors}")
+print(f"Inserts: {raw_counts_inserts}")
+
+print(f"\nPercentages:")
+print(f"Nouns: {percent_nouns:.1%}")
+print(f"Verbs: {percent_verbs:.1%}")
+print(f"Adjectives: {percent_adjectives:.1%}")
+print(f"Adverbs: {percent_adverbs:.1%}")
+print(f"Function Words: {percent_functors:.1%}")
+print(f"Inserts: {percent_inserts:.1%}")
+
+print(f"\nNormed Counts Per 1000:")
+print(f"Nouns: {norm_counts_nouns:0.1f}")
+print(f"Verbs: {raw_counts_verbs:0.1f}")
+print(f"Adjectives: {norm_counts_adjectives:0.1f}")
+print(f"Adverbs: {norm_counts_adverbs:0.1f}")
+print(f"Function Words: {norm_counts_functors:0.1f}")
+print(f"Inserts: {norm_counts_inserts:0.1f}")
 
 # Graphing
 width = 0.7
@@ -126,8 +140,7 @@ p2 = plt.bar(width=width, x=1, height=norm_counts_verbs, bottom=norm_counts_noun
 p3 = plt.bar(width=width, x=1, height=norm_counts_adverbs, bottom=norm_counts_nouns + norm_counts_verbs)
 p4 = plt.bar(width=width, x=1, height=norm_counts_adjectives, bottom=norm_counts_nouns + norm_counts_verbs + norm_counts_adverbs)
 
-plt.ylabel('Normed Word Counts Per 1000')
-plt.title('Distribution of Lexical Word Classes')
+plt.ylabel('Normed Counts Per 1000 Words')
 plt.title('2007 Text Messages: Frequency of Lexical Word Classes')
 plt.tick_params(
     axis='x',          # changes apply to the x-axis
