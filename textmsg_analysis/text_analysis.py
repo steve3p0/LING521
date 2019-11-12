@@ -1,7 +1,7 @@
+# Use this in the future for reading corpora from a text file
 # from nltk.corpus import PlaintextCorpusReader
 # corpus_root = 'corpora/'  # Mac users should leave out C:
 # corpus = PlaintextCorpusReader(corpus_root, '.*txt')  # all files ending in 'txt'
-#
 
 import nltk
 from nltk.tag import pos_tag
@@ -15,11 +15,14 @@ from collections import defaultdict
 nltk.download('averaged_perceptron_tagger')
 nltk.download('universal_tagset')
 nltk.download('tagsets')
-nltk.download('stopwords')
-
 # tagset_upenn = nltk.help.upenn_tagset()
-from nltk.corpus import stopwords
-stops = set(stopwords.words("english"))
+
+# Function Words: We explored using NLTK stop words, but ultimately we did not use it
+# We combined ADP, PRON, DET, CONJ into Inserts
+# from nltk.corpus import stopwords
+# nltk.download('stopwords')
+# stops = set(stopwords.words("english"))
+
 insert_words = ('yeah', 'Ok', 'ahh')
 
 messages = ['Gym?',
@@ -37,13 +40,16 @@ messages = ['Gym?',
             'where r u???',
             'pinball']
 
-#sentence_lengths = [len(sentence.split()) for sentence in messages]
-#total_words = sum(sentence_lengths)
-#print(f"Sentence Lengths: {sentence_lengths}")
-
 # Iterate thru each message in our 2007 Text Message Corpus
 # NOTE: We could have written this code to simply get the counts on the whole corpus,
 # but for this assignment, message level analysis made it easier to confirm with manual conounts
+# This is how it looks if we use the upenn tagset:
+# Counter({'NOUN': 29, 'VERB': 12, 'ADP': 9, 'ADV': 8, 'PRON': 8, '.': 7, 'DET': 4, 'ADJ': 3, 'CONJ': 2})
+# But we are going to modify the tagging to:
+#   1. Inserts: Check if a word is in our inserts set
+#   2. Function Words: Combine ADP, PRON, DET, CONJ into FUNCTOR
+#   3. Remove Punctuation
+
 counter_list = []
 words = defaultdict(list)
 
@@ -78,7 +84,6 @@ print(f"Function Words: {words['FUNCTOR']}")
 print(f"Inserts: {words['Inserts']}")
 
 # Gather Counts
-#counter_static = Counter({'NOUN': 29, 'VERB': 12, 'ADP': 9, 'ADV': 8, 'PRON': 8, '.': 7, 'DET': 4, 'ADJ': 3, 'CONJ': 2})
 raw_counts_nouns = counter_pos['NOUN']
 raw_counts_verbs = counter_pos['VERB']
 raw_counts_adverbs = counter_pos['ADV']
