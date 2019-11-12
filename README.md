@@ -27,15 +27,21 @@ NOTE: These instructions are for Windows 10 (Instructor's OS)
     - Follow these instructions: 
         - https://phoenixnap.com/kb/how-to-install-python-3-windows
         - C:\Users\USER\AppData\Local\Programs\Python\Python37    
-- Install matplotlib
+- Install Graphing/Plotting Package (matplotlib)
     - on windows 10, requires Microsoft Visual C++ 14.0 Build Tools:
     https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=BuildTools&rel=16
     https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019
     - pip3 install -U matplotlib
-- install jypyter
-    - pip3 install jupyterlab
-- install nltk
+- Install Python Natural Langauge Toolkit
     - pip3 install nltk
+- Install Jypyter Notebook support
+    - pip3 install jupyterlab
+- Install DataTable Support for Jupyter Notebooks
+    - pip3 install jupyter-datatables
+- Enable DataTable Support for Jupyter Notebooks
+    - jupyter nbextension install --sys-prefix --py jupyter_require
+    - jupyter nbextension enable jupyter-require/extension
+    - ??jupyter nbextension enable jupyter_require --py --sys-prefix
     
 #### Optional Installs:
 - Register and Install Github Desktop (Optional)
