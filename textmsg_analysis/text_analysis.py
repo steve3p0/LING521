@@ -23,7 +23,7 @@ nltk.download('tagsets')
 # nltk.download('stopwords')
 # stops = set(stopwords.words("english"))
 
-insert_words = ('yeah', 'Ok', 'ahh')
+insert_words = ( 'yeah', 'Ok', 'ahh')
 
 messages = ['Gym?',
             'yeah be there in about a half',
