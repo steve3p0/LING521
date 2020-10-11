@@ -1,5 +1,5 @@
 # LING521
-Portland State University LING 521: Applied English grammar code repo for winter term 2019.
+Portland State University LING 521: Applied English grammar code repo for fall term 2020.
 
 #### Running the Scripts:
 Click on the Jupyter Notebooks below to load a demo of the script.  

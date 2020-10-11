@@ -12,6 +12,7 @@ import matplotlib.pyplot as plt
 from collections import Counter
 from collections import defaultdict
 
+
 nltk.download('averaged_perceptron_tagger')
 nltk.download('universal_tagset')
 nltk.download('tagsets')
