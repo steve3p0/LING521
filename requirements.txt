@@ -2,5 +2,3 @@ nltk
 numpy
 pandas
 matplotlib
-collections
-IPython
