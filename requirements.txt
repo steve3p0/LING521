@@ -1,0 +1,8 @@
+sys
+nltk
+numpy
+pandas
+matplotlib
+defaultdict
+collections
+IPython.display
